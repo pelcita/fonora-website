@@ -317,6 +317,18 @@
       .blog-card-title { font-size: 1.1rem; }
     }
       .powered-by { font-family: var(--font-body); font-size: 0.7rem; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; padding-left: 2px; }
+    /* COOKIE BANNER */
+    .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; z-index: 99998; background: var(--navy); border-top: 3px solid var(--orange); padding: 20px 24px; display: none; box-shadow: 0 -4px 30px rgba(0,0,0,0.3); }
+    .cookie-banner.show { display: block; }
+    .cookie-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .cookie-text { font-family: var(--font-body); font-size: 0.85rem; color: rgba(255,255,255,0.8); line-height: 1.6; flex: 1 1 500px; }
+    .cookie-text a { color: var(--orange); text-decoration: underline; }
+    .cookie-buttons { display: flex; gap: 12px; flex-shrink: 0; }
+    .cookie-btn { padding: 10px 24px; border-radius: 100px; font-family: var(--font-body); font-weight: 600; font-size: 0.85rem; border: none; cursor: pointer; transition: all 0.3s; }
+    .cookie-btn-accept { background: var(--orange); color: var(--white); }
+    .cookie-btn-accept:hover { box-shadow: 0 4px 20px rgba(232,93,4,0.4); }
+    .cookie-btn-decline { background: transparent; color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.2); }
+    .cookie-btn-decline:hover { border-color: rgba(255,255,255,0.5); color: var(--white); }
   </style>
 </head>
 <body>
@@ -502,5 +514,18 @@
     });
   </script>
 
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-inner">
+      <p class="cookie-text">Wir verwenden Cookies, um dir die bestm&ouml;gliche Erfahrung auf unserer Website zu bieten. <a href="../datenschutz.html">Mehr erfahren</a></p>
+      <div class="cookie-buttons">
+        <button class="cookie-btn cookie-btn-decline" onclick="cookieResponse(false)">Nur notwendige</button>
+        <button class="cookie-btn cookie-btn-accept" onclick="cookieResponse(true)">Alle akzeptieren</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    function cookieResponse(accepted) { localStorage.setItem('fonora_cookies', accepted ? 'all' : 'necessary'); document.getElementById('cookieBanner').classList.remove('show'); }
+    if (!localStorage.getItem('fonora_cookies')) { document.getElementById('cookieBanner').classList.add('show'); }
+  </script>
 </body>
 </html>
