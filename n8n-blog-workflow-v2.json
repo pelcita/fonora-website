@@ -1,0 +1,370 @@
+{
+  "name": "Fonora Weekly Blog v2",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 9,
+              "triggerAtDay": 1
+            }
+          ]
+        }
+      },
+      "id": "node-trigger",
+      "name": "Jeden Montag 9:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://api.github.com/repos/pelcita/fonora-website/contents/blog/index.html",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3.raw"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          }
+        }
+      },
+      "id": "node-load-blog",
+      "name": "Blog Index laden",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [240, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "github-token",
+          "name": "GitHub Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 1024, messages: [{ role: 'user', content: 'Du bist der Blog-Autor fuer fonora.ai. Analysiere den folgenden HTML-Code der Blog-Uebersicht und bestimme welche Artikel bereits existieren. Dann waehle das NAECHSTE Thema aus dieser Liste das noch NICHT geschrieben wurde:\\n\\n1. Warum Handwerker 30% mehr Auftraege verlieren ohne Telefonassistenz\\n2. DSGVO-konforme KI am Telefon Was du wissen musst\\n3. 5 Zeichen dass dein Unternehmen eine KI-Telefonassistenz braucht\\n4. KI Telefon fuer Zahnarztpraxen So laeuft der Praxisalltag runder\\n5. Verpasste Anrufe kosten dich Kunden So stoppst du den Verlust\\n6. KI Telefonassistent einrichten In 3 Schritten startklar\\n7. Warum kleine Betriebe von KI-Telefonassistenz am meisten profitieren\\n8. KI Telefon fuer Handwerker Nie wieder Auftraege verpassen\\n9. Terminbuchung per KI Warum dein Kalender sich selbst fuellen sollte\\n10. Was kostet ein KI-Telefonassistent wirklich\\n11. KI Telefon fuer Friseursalons Mehr Termine weniger Stress\\n12. Callcenter-Alternative fuer KMU Warum KI die bessere Wahl ist\\n13. KI Telefonassistenz und Datenschutz Ein Leitfaden\\n14. Wie KI-Telefonassistenten die Kundenzufriedenheit steigern\\n15. KI Telefon fuer Physiotherapie-Praxen\\n16. Die 7 haeufigsten Fragen zu KI-Telefonassistenten\\n17. KI Telefon fuer Architekturbueros\\n18. Anrufannahme automatisieren Der ultimative Guide\\n19. KI Telefon fuer Autohaeuser\\n20. Erreichbarkeit als Wettbewerbsvorteil\\n\\nAntworte NUR mit einem JSON-Objekt:\\n{\"topic_number\": 1, \"title\": \"Der Titel\", \"slug\": \"der-slug\", \"category\": \"Branche\", \"excerpt\": \"Kurze Beschreibung\"}\\n\\nBlog-Index:\\n' + $json.data }] }) }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "node-pick-topic",
+      "name": "Thema waehlen (Claude)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [480, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "anthropic-key",
+          "name": "Anthropic API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = $input.first().json;\nconst text = response.content?.[0]?.text || '{}';\nlet topic;\ntry {\n  const jsonMatch = text.match(/\\{[\\s\\S]*?\\}/);\n  topic = JSON.parse(jsonMatch[0]);\n} catch(e) {\n  topic = { topic_number: 1, title: 'Warum Handwerker 30 Prozent mehr Auftraege verlieren ohne Telefonassistenz', slug: 'handwerker-verpasste-anrufe', category: 'Branche', excerpt: 'Verpasste Anrufe kosten Handwerksbetriebe Tausende Euro im Jahr.' };\n}\nconst today = new Date();\nconst months = ['Januar','Februar','M\\u00e4rz','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];\nconst dateStr = today.getDate() + '. ' + months[today.getMonth()] + ' ' + today.getFullYear();\nconst isoDate = today.toISOString().split('T')[0];\nreturn [{ json: { ...topic, dateStr, isoDate } }];"
+      },
+      "id": "node-parse",
+      "name": "Thema parsen",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [720, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://api.github.com/repos/pelcita/fonora-website/contents/blog/ki-telefonassistent-vs-callcenter-2026/index.html",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3.raw"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          }
+        }
+      },
+      "id": "node-template",
+      "name": "Template laden",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [960, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "github-token",
+          "name": "GitHub Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "content-type",
+              "value": "application/json"
+            },
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 15000, messages: [{ role: 'user', content: 'Schreibe einen kompletten Blog-Artikel als HTML-Datei.\\n\\nThema: ' + $('Thema parsen').first().json.title + '\\nSlug: ' + $('Thema parsen').first().json.slug + '\\nKategorie: ' + $('Thema parsen').first().json.category + '\\nDatum: ' + $('Thema parsen').first().json.dateStr + '\\nISO-Datum: ' + $('Thema parsen').first().json.isoDate + '\\n\\nREGELN:\\n- Deutsch, Du-Form, professionell aber nahbar\\n- 800-1200 Woerter\\n- Brand: fonora.ai, HeadUpHigh GmbH, Gruenderin Olga Reyes-Busch\\n- Produkt: Nora, KI-Telefonassistentin, ab 99 Euro/Monat Selfmade-Tarif\\n- NIEMALS fonio.ai erwaehnen\\n- SEO Title mit KI Telefon Keywords\\n- Interne Links zu ../../fuer-dachdecker/ ../../fuer-zahnarztpraxis/ ../../fuer-architekt/ etc.\\n- CTA am Ende mit Link zu ../../#demo\\n- Bildpfade mit ../../images/\\n\\nNutze EXAKT das gleiche HTML-Template (CSS, Struktur, Klassen) wie dieser Artikel:\\n\\n' + $json.data + '\\n\\nAntworte NUR mit dem kompletten HTML. Kein Markdown, keine Erklaerung.' }] }) }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "node-write",
+      "name": "Artikel schreiben (Claude)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1200, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "anthropic-key",
+          "name": "Anthropic API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = $input.first().json;\nconst articleHtml = response.content?.[0]?.text || '';\nconst slug = $('Thema parsen').first().json.slug;\nconst title = $('Thema parsen').first().json.title;\nconst category = $('Thema parsen').first().json.category;\nconst dateStr = $('Thema parsen').first().json.dateStr;\nconst isoDate = $('Thema parsen').first().json.isoDate;\nconst excerpt = $('Thema parsen').first().json.excerpt;\nconst articleBase64 = Buffer.from(articleHtml, 'utf-8').toString('base64');\nconst images = ['nora-buero.png','nora-handwerk-neu.png','nora-zahnarzt.png','nora-architekt.png','nora-friseur.png','nora-physiotherapie.png','nora-elektro.png','nora-beautysalon.png'];\nconst cardImage = images[Math.floor(Math.random() * images.length)];\nconst newCard = '\\n        <a href=\"./' + slug + '/\" class=\"blog-card reveal\">\\n          <div class=\"blog-card-img\">\\n            <img src=\"../images/' + cardImage + '\" alt=\"' + title.replace(/\"/g,'') + '\">\\n          </div>\\n          <div class=\"blog-card-body\">\\n            <div class=\"blog-card-meta\">\\n              <span class=\"blog-card-category\">' + category + '</span>\\n              <span class=\"blog-card-date\">' + dateStr + '</span>\\n            </div>\\n            <h2 class=\"blog-card-title\">' + title + '</h2>\\n            <p class=\"blog-card-excerpt\">' + excerpt + '</p>\\n            <span class=\"blog-card-link\">Weiterlesen &rarr;</span>\\n          </div>\\n        </a>';\nconst newSchema = '      {\\n        \"@type\": \"BlogPosting\",\\n        \"headline\": \"' + title.replace(/\"/g,'') + '\",\\n        \"datePublished\": \"' + isoDate + '\",\\n        \"description\": \"' + excerpt.replace(/\"/g,'') + '\",\\n        \"url\": \"https://fonora.ai/blog/' + slug + '/\",\\n        \"author\": { \"@type\": \"Person\", \"name\": \"Olga Reyes-Busch\" }\\n      }';\nconst sitemapEntry = '  <url>\\n    <loc>https://fonora.ai/blog/' + slug + '/</loc>\\n    <changefreq>monthly</changefreq>\\n    <priority>0.7</priority>\\n  </url>';\nreturn [{ json: { slug, title, articleBase64, newCard, newSchema, sitemapEntry } }];"
+      },
+      "id": "node-prepare",
+      "name": "Dateien vorbereiten",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1440, 300]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "=https://api.github.com/repos/pelcita/fonora-website/contents/blog/{{ $json.slug }}/index.html",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ message: 'Blog: ' + $json.title, content: $json.articleBase64 }) }}",
+        "options": {}
+      },
+      "id": "node-push-article",
+      "name": "Artikel hochladen",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1680, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "github-token",
+          "name": "GitHub Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://api.github.com/repos/pelcita/fonora-website/contents/blog/index.html",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "id": "node-blog-sha",
+      "name": "Blog SHA holen",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1920, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "github-token",
+          "name": "GitHub Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const blogData = $input.first().json;\nconst sha = blogData.sha;\nconst content = Buffer.from(blogData.content, 'base64').toString('utf-8');\nconst newCard = $('Dateien vorbereiten').first().json.newCard;\nconst newSchema = $('Dateien vorbereiten').first().json.newSchema;\nlet updated = content.replace('<div class=\"blog-grid\">', '<div class=\"blog-grid\">' + newCard);\nupdated = updated.replace('\"blogPost\": [', '\"blogPost\": [\\n' + newSchema + ',');\nconst updatedBase64 = Buffer.from(updated, 'utf-8').toString('base64');\nreturn [{ json: { sha, updatedBase64 } }];"
+      },
+      "id": "node-update-blog",
+      "name": "Blog Index updaten",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2160, 300]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "https://api.github.com/repos/pelcita/fonora-website/contents/blog/index.html",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ message: 'Blog Index aktualisiert', content: $json.updatedBase64, sha: $json.sha }) }}",
+        "options": {}
+      },
+      "id": "node-push-blog",
+      "name": "Blog Index pushen",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2400, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "github-token",
+          "name": "GitHub Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://api.github.com/repos/pelcita/fonora-website/contents/sitemap.xml",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "id": "node-sitemap-sha",
+      "name": "Sitemap SHA holen",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2640, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "github-token",
+          "name": "GitHub Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const sitemapData = $input.first().json;\nconst sha = sitemapData.sha;\nconst content = Buffer.from(sitemapData.content, 'base64').toString('utf-8');\nconst newEntry = $('Dateien vorbereiten').first().json.sitemapEntry;\nconst updated = content.replace('</urlset>', newEntry + '\\n</urlset>');\nconst updatedBase64 = Buffer.from(updated, 'utf-8').toString('base64');\nreturn [{ json: { sha, updatedBase64 } }];"
+      },
+      "id": "node-update-sitemap",
+      "name": "Sitemap updaten",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2880, 300]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "https://api.github.com/repos/pelcita/fonora-website/contents/sitemap.xml",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ message: 'Sitemap aktualisiert', content: $json.updatedBase64, sha: $json.sha }) }}",
+        "options": {}
+      },
+      "id": "node-push-sitemap",
+      "name": "Sitemap pushen",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [3120, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "github-token",
+          "name": "GitHub Token"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Jeden Montag 9:00": {
+      "main": [[{ "node": "Blog Index laden", "type": "main", "index": 0 }]]
+    },
+    "Blog Index laden": {
+      "main": [[{ "node": "Thema waehlen (Claude)", "type": "main", "index": 0 }]]
+    },
+    "Thema waehlen (Claude)": {
+      "main": [[{ "node": "Thema parsen", "type": "main", "index": 0 }]]
+    },
+    "Thema parsen": {
+      "main": [[{ "node": "Template laden", "type": "main", "index": 0 }]]
+    },
+    "Template laden": {
+      "main": [[{ "node": "Artikel schreiben (Claude)", "type": "main", "index": 0 }]]
+    },
+    "Artikel schreiben (Claude)": {
+      "main": [[{ "node": "Dateien vorbereiten", "type": "main", "index": 0 }]]
+    },
+    "Dateien vorbereiten": {
+      "main": [[{ "node": "Artikel hochladen", "type": "main", "index": 0 }]]
+    },
+    "Artikel hochladen": {
+      "main": [[{ "node": "Blog SHA holen", "type": "main", "index": 0 }]]
+    },
+    "Blog SHA holen": {
+      "main": [[{ "node": "Blog Index updaten", "type": "main", "index": 0 }]]
+    },
+    "Blog Index updaten": {
+      "main": [[{ "node": "Blog Index pushen", "type": "main", "index": 0 }]]
+    },
+    "Blog Index pushen": {
+      "main": [[{ "node": "Sitemap SHA holen", "type": "main", "index": 0 }]]
+    },
+    "Sitemap SHA holen": {
+      "main": [[{ "node": "Sitemap updaten", "type": "main", "index": 0 }]]
+    },
+    "Sitemap updaten": {
+      "main": [[{ "node": "Sitemap pushen", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Berlin"
+  }
+}
