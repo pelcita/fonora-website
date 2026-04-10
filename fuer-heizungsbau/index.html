@@ -167,10 +167,9 @@
     .nav.scrolled { background: rgba(9, 20, 64, 0.95); backdrop-filter: blur(12px); padding: 12px 0; }
     .nav .container { display: flex; justify-content: space-between; align-items: center; }
     .nav-logo {
-      font-family: var(--font-headline); font-weight: 800; font-size: 1.4rem;
-      color: var(--white); letter-spacing: -0.02em; display: flex; align-items: center; gap: 10px;
+      display: flex; align-items: center;
     }
-    .nav-logo img { height: 36px; width: auto; background: var(--ivory); padding: 4px 10px; border-radius: 8px; }
+    .nav-logo img { height: 44px; width: auto; background: var(--ivory); padding: 6px 14px; border-radius: 10px; }
     .nav-cta {
       display: inline-block; padding: 12px 28px; background: var(--orange); color: var(--white);
       font-family: var(--font-body); font-weight: 600; font-size: 0.9rem;
@@ -348,6 +347,8 @@
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
+      .nav-logo img { height: 36px; padding: 4px 10px; }
+      .nav-cta { padding: 10px 18px; font-size: 0.75rem; }
       .stats-grid { grid-template-columns: 1fr; gap: 48px; }
       .features-split { grid-template-columns: 1fr; }
       .features-image { order: -1; }
@@ -407,8 +408,7 @@
   <nav class="nav" id="nav">
     <div class="container">
       <a href="../" class="nav-logo">
-        <img src="../images/1-removebg-preview.png" alt="fonora.ai – KI-Telefonassistenz für Heizungsbauer">
-        <span>fonora.ai</span>
+        <img src="../images/logo-fonora.png" alt="fonora.ai – powered by fonio – KI-Telefonassistenz">
       </a>
       <a href="https://cal.eu/headuphigh/fonora.ai-erstgeprach" target="_blank" rel="noopener" class="nav-cta magnetic-nav">Kennenlerncall buchen &rarr;</a>
     </div>
