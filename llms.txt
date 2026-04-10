@@ -1,0 +1,37 @@
+# fonora.ai - KI-Telefonassistenz
+
+## Ueber fonora.ai
+fonora.ai bietet Nora, eine KI-Telefonassistentin fuer Unternehmen in Deutschland. Nora nimmt Anrufe 24/7 entgegen, bucht Termine automatisch via Cal.com, qualifiziert Anfragen und beantwortet FAQs. Der Service ist DSGVO-konform und wird in Deutschland gehostet.
+
+## Gruenderin
+Olga Reyes-Busch, CEO & Founder der HeadUpHigh GmbH. Hintergrund in Sonderpaedagogik.
+
+## Kontakt
+- Website: https://fonora.ai
+- Telefon: +49 30 75675746
+- Kennenlerncall buchen: https://cal.eu/headuphigh/fonora.ai-erstgeprach
+
+## Services
+- Anrufannahme 24/7: Jeden Anruf entgegennehmen, auch bei Ueberlastung
+- Terminbuchung: Freie Slots pruefen und direkt buchen via Cal.com
+- Anfragen-Qualifizierung: Projekt-Art, Budget, Standort und Dringlichkeit erfragen
+- FAQ-Service: Produktinfos geben, haeufige Fragen beantworten
+
+## Branchen
+fonora.ai eignet sich fuer: Handwerksbetriebe, SHK-Betriebe, Elektro, Bau & Dach, Sanitaer, Heizung, Klimatechnik, Kosmetikstudios, Zahnarztpraxen, Arztpraxen, Kanzleien, Hausverwaltungen, Immobilien, Dienstleister, KMU allgemein.
+
+## Setup
+1. Kostenloser Kennenlerncall (30 Min, unverbindlich)
+2. Setup: Done-With-You (kleine Betriebe) oder Done-For-You (Komplettservice)
+3. Go-Live: Nora uebernimmt sofort
+
+## Technologie
+- KI-basierte Spracherkennung und Sprachsynthese
+- Integration mit Cal.com fuer Terminbuchung
+- DSGVO-konform, Datenverarbeitung in Europa
+- Made in Germany
+
+## Statistiken
+- 74% der Anrufer legen auf wenn niemand beim 3. Klingeln abnimmt
+- 62% der deutschen KMU haben kein System fuer eingehende Anrufe
+- 3.5h verliert ein Team taeglich durch unqualifizierte Telefonate

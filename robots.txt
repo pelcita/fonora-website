@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fonora.ai/sitemap.xml

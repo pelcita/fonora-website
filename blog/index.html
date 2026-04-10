@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | fonora.ai — KI-Telefonassistenz Wissen &amp; Tipps</title>
+  <meta name="description" content="Praxiswissen rund um KI-Telefonassistenz, Digitalisierung und Erreichbarkeit für KMU, Handwerk und Dienstleister. Fundierte Artikel von fonora.ai.">
+  <meta name="keywords" content="KI Telefonassistenz Blog, KI Telefon Ratgeber, Digitalisierung Handwerk, Erreichbarkeit Unternehmen">
+  <meta name="author" content="HeadUpHigh GmbH">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://fonora.ai/blog/">
+  <link rel="icon" type="image/png" href="../images/icon.png">
+  <link rel="apple-touch-icon" href="../images/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fonora.ai/blog/">
+  <meta property="og:title" content="Blog | fonora.ai — KI-Telefonassistenz Wissen &amp; Tipps">
+  <meta property="og:description" content="Praxiswissen rund um KI-Telefonassistenz, Digitalisierung und Erreichbarkeit für KMU, Handwerk und Dienstleister. Fundierte Artikel von fonora.ai.">
+  <meta property="og:image" content="https://fonora.ai/images/nora%20handy.png">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="fonora.ai">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog | fonora.ai — KI-Telefonassistenz Wissen &amp; Tipps">
+  <meta name="twitter:description" content="Praxiswissen rund um KI-Telefonassistenz, Digitalisierung und Erreichbarkeit für KMU, Handwerk und Dienstleister. Fundierte Artikel von fonora.ai.">
+  <meta name="twitter:image" content="https://fonora.ai/images/nora%20handy.png">
+
+  <!-- Geo -->
+  <meta name="geo.region" content="DE">
+  <meta name="geo.placename" content="Deutschland">
+
+  <!-- Schema.org Blog -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "fonora.ai Blog",
+    "description": "Praxiswissen rund um KI-Telefonassistenz, Digitalisierung und Erreichbarkeit für KMU, Handwerk und Dienstleister.",
+    "url": "https://fonora.ai/blog/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "fonora.ai",
+      "legalName": "HeadUpHigh GmbH",
+      "url": "https://fonora.ai"
+    },
+    "blogPost": [
+      {
+        "@type": "BlogPosting",
+        "headline": "KI Telefonassistent vs. Callcenter — Was lohnt sich 2026?",
+        "datePublished": "2026-04-10",
+        "description": "Du überlegst, ob ein KI-Telefonassistent oder ein klassisches Callcenter besser zu deinem Unternehmen passt? Wir vergleichen Kosten, Qualität und Flexibilität.",
+        "url": "https://fonora.ai/blog/ki-telefonassistent-vs-callcenter-2026/",
+        "author": {
+          "@type": "Person",
+          "name": "Olga Reyes-Busch"
+        }
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Warum Handwerker 30% mehr Aufträge verlieren — ohne Telefonassistenz",
+        "datePublished": "2026-04-17",
+        "description": "Verpasste Anrufe kosten Handwerksbetriebe Tausende Euro im Jahr. So löst du das Problem dauerhaft.",
+        "url": "https://fonora.ai/blog/handwerker-verpasste-anrufe/",
+        "author": {
+          "@type": "Person",
+          "name": "Olga Reyes-Busch"
+        }
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "DSGVO-konforme KI am Telefon — Was du wissen musst",
+        "datePublished": "2026-04-24",
+        "description": "KI und Datenschutz — geht das zusammen? Ja. Wir erklären, worauf es bei DSGVO-konformer Telefonassistenz ankommt.",
+        "url": "https://fonora.ai/blog/dsgvo-ki-telefon/",
+        "author": {
+          "@type": "Person",
+          "name": "Olga Reyes-Busch"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "fonora.ai", "item": "https://fonora.ai/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://fonora.ai/blog/" }
+    ]
+  }
+  </script>
+
+  <!-- LLM-Optimierung -->
+  <meta name="summary" content="fonora.ai Blog: Praxiswissen rund um KI-Telefonassistenz, Digitalisierung und Erreichbarkeit für KMU, Handwerk und Dienstleister.">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy: #091440;
+      --orange: #e85d04;
+      --ivory: #faf9f6;
+      --white: #ffffff;
+      --font-headline: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    html.lenis, html.lenis body { height: auto; }
+    .lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--navy);
+      background: var(--navy);
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    h1, h2, h3, h4, h5, h6 { font-family: var(--font-headline); font-weight: 800; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* CURSOR */
+    .custom-cursor {
+      position: fixed; top: 0; left: 0; pointer-events: none; z-index: 99999;
+      transform: translate(-50%, -50%); transition: transform 0.3s; opacity: 0; will-change: left, top;
+    }
+    .custom-cursor.visible { opacity: 1; }
+    .custom-cursor.hover { transform: translate(-50%, -50%) scale(1.4); }
+    .custom-cursor svg { width: 36px; height: 36px; filter: drop-shadow(0 2px 8px rgba(232, 93, 4, 0.5)); }
+
+    /* NAV */
+    .nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      padding: 20px 0; transition: background 0.4s, backdrop-filter 0.4s, padding 0.4s;
+    }
+    .nav.scrolled { background: rgba(9, 20, 64, 0.95); backdrop-filter: blur(12px); padding: 12px 0; }
+    .nav .container { display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo {
+      font-family: var(--font-headline); font-weight: 800; font-size: 1.4rem;
+      color: var(--white); letter-spacing: -0.02em; display: flex; align-items: center; gap: 10px;
+    }
+    .nav-logo img { height: 36px; width: auto; background: var(--ivory); padding: 4px 10px; border-radius: 8px; }
+    .nav-cta {
+      display: inline-block; padding: 12px 28px; background: var(--orange); color: var(--white);
+      font-family: var(--font-body); font-weight: 600; font-size: 0.9rem;
+      border-radius: 100px; border: none; cursor: none; transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .nav-cta:hover { box-shadow: 0 8px 30px rgba(232, 93, 4, 0.4); }
+
+    /* BREADCRUMB */
+    .breadcrumb {
+      padding: 100px 0 0; background: var(--navy);
+    }
+    .breadcrumb-inner {
+      font-size: 0.8rem; color: rgba(255,255,255,0.4);
+      font-family: var(--font-body);
+    }
+    .breadcrumb-inner a { color: rgba(255,255,255,0.5); transition: color 0.3s; }
+    .breadcrumb-inner a:hover { color: var(--orange); }
+    .breadcrumb-sep { margin: 0 8px; }
+
+    /* SECTIONS */
+    .section { padding: 120px 0; }
+    .section-dark { background: var(--navy); color: var(--white); }
+    .section-ivory { background: var(--ivory); color: var(--navy); }
+
+    .section-label {
+      font-family: var(--font-body); font-weight: 600; font-size: 0.75rem;
+      letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 16px; opacity: 0.6;
+    }
+    .section-headline { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.15; margin-bottom: 24px; }
+
+    .reveal { opacity: 0; transform: translateY(40px); will-change: opacity, transform; }
+
+    /* HERO */
+    .blog-hero {
+      position: relative; padding: 160px 0 100px; background: var(--navy); overflow: hidden;
+    }
+    .blog-hero::before {
+      content: ''; position: absolute; top: -200px; right: -150px; width: 600px; height: 600px;
+      border-radius: 50%; background: radial-gradient(circle, rgba(232,93,4,0.1), transparent 70%);
+      pointer-events: none;
+    }
+    .blog-hero::after {
+      content: ''; position: absolute; bottom: -100px; left: -100px; width: 400px; height: 400px;
+      border-radius: 50%; background: radial-gradient(circle, rgba(232,93,4,0.06), transparent 70%);
+      pointer-events: none;
+    }
+    .blog-hero .container { position: relative; z-index: 2; }
+    .blog-hero-label {
+      font-family: var(--font-body); font-weight: 600; font-size: 0.75rem;
+      letter-spacing: 0.15em; text-transform: uppercase; color: var(--orange); margin-bottom: 16px;
+    }
+    .blog-hero-headline {
+      font-family: var(--font-headline); font-weight: 800;
+      font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.1; color: var(--white); margin-bottom: 20px;
+    }
+    .blog-hero-sub {
+      font-family: var(--font-body); font-size: 1.1rem; color: rgba(255,255,255,0.6);
+      max-width: 560px;
+    }
+
+    /* BLOG GRID */
+    .blog-section { background: var(--ivory); padding: 80px 0 120px; }
+
+    .blog-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px;
+    }
+
+    /* BLOG CARD */
+    .blog-card {
+      background: var(--white); border-radius: 16px; overflow: hidden;
+      box-shadow: 0 4px 24px rgba(9, 20, 64, 0.06);
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s;
+      display: flex; flex-direction: column;
+    }
+    .blog-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(9, 20, 64, 0.12);
+    }
+    .blog-card-img {
+      position: relative; height: 220px; overflow: hidden; background: var(--navy);
+    }
+    .blog-card-img img {
+      width: 100%; height: 100%; object-fit: cover; object-position: top center;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .blog-card:hover .blog-card-img img { transform: scale(1.06); }
+    .blog-card-img::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60px;
+      background: linear-gradient(to top, rgba(255,255,255,0.08), transparent);
+    }
+    .blog-card-body { padding: 32px; flex: 1; display: flex; flex-direction: column; }
+    .blog-card-meta {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
+    }
+    .blog-card-category {
+      display: inline-block; padding: 4px 12px; background: rgba(232, 93, 4, 0.1);
+      color: var(--orange); font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.08em; border-radius: 100px;
+    }
+    .blog-card-date {
+      font-size: 0.8rem; color: rgba(9, 20, 64, 0.4); font-family: var(--font-body);
+    }
+    .blog-card-title {
+      font-family: var(--font-headline); font-weight: 800; font-size: 1.25rem;
+      line-height: 1.35; color: var(--navy); margin-bottom: 12px;
+      transition: color 0.3s;
+    }
+    .blog-card:hover .blog-card-title { color: var(--orange); }
+    .blog-card-excerpt {
+      font-size: 0.95rem; line-height: 1.7; color: rgba(9, 20, 64, 0.65); margin-bottom: 24px;
+      flex: 1;
+    }
+    .blog-card-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: var(--font-body); font-weight: 600; font-size: 0.9rem;
+      color: var(--orange); transition: gap 0.3s;
+    }
+    .blog-card:hover .blog-card-link { gap: 12px; }
+
+    /* DIVIDER */
+    .section-divider {
+      background: var(--navy); padding: 0;
+    }
+    .section-divider hr {
+      border: none; border-top: 4px solid var(--orange); opacity: 0.6; margin: 0;
+    }
+
+    /* ABOUT SECTION */
+    .about-wrap { position: relative; overflow: hidden; }
+    .about-wrap::before { content: ''; position: absolute; top: -120px; right: -80px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(232,93,4,0.08), transparent 70%); pointer-events: none; }
+    .about-inner { display: flex; align-items: center; gap: 64px; }
+    .about-text { flex: 1 1 55%; }
+    .about-text .about-label { display: flex; align-items: center; gap: 12px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--orange); margin-bottom: 1rem; }
+    .about-text .about-label-line { display: block; width: 40px; height: 2px; background: var(--orange); }
+    .about-text h2 { font-family: var(--font-headline); font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800; line-height: 1.2; color: var(--white); margin-bottom: 1.2rem; }
+    .about-text p { font-size: 1.05rem; line-height: 1.8; color: rgba(255,255,255,0.75); margin-bottom: 1rem; }
+    .about-text p strong { color: var(--white); }
+    .about-callout { border-left: 3px solid var(--orange); padding: 1rem 1.5rem; margin: 1.5rem 0; background: rgba(232,93,4,0.06); border-radius: 0 12px 12px 0; }
+    .about-callout p { font-style: italic; color: rgba(255,255,255,0.85); margin: 0; }
+    .about-signature { font-family: var(--font-headline); font-weight: 700; font-size: 0.9rem; color: var(--orange); margin-top: 1.5rem; }
+    .about-img-wrap { flex: 0 0 320px; position: relative; }
+    .about-img-wrap::before { content: ''; position: absolute; top: -16px; left: -16px; right: -16px; bottom: -16px; border: 2px solid rgba(232,93,4,0.2); border-radius: 24px; pointer-events: none; }
+    .about-img-wrap img { width: 100%; border-radius: 20px; display: block; }
+
+    /* FOOTER */
+    .footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,0.08); padding: 48px 0; text-align: center; }
+    .footer-logo { font-family: var(--font-headline); font-weight: 800; font-size: 1.2rem; color: var(--white); margin-bottom: 8px; }
+    .footer-company { font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-bottom: 24px; }
+    .footer-links { display: flex; justify-content: center; gap: 24px; }
+    .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.4); transition: color 0.3s; }
+    .footer-links a:hover { color: var(--white); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .blog-grid { grid-template-columns: 1fr; }
+      .section { padding: 80px 0; }
+      .blog-section { padding: 60px 0 80px; }
+      .blog-hero { padding: 130px 0 70px; }
+      .about-inner { flex-direction: column-reverse; gap: 32px; }
+      .about-img-wrap { flex: none; width: 200px; margin: 0 auto; }
+      .custom-cursor { display: none; }
+      body { cursor: auto; }
+      a, button, input, select { cursor: auto; }
+    }
+
+    @media (max-width: 480px) {
+      .blog-hero-headline { font-size: 2rem; }
+      .blog-card-body { padding: 24px; }
+      .blog-card-title { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="custom-cursor" id="cursor">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1.003 1.003 0 011.01-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.07 21 3 13.93 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.1.31.03.66-.25.94l-2.2 2.28z" fill="#e85d04"/>
+    </svg>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <a href="../" class="nav-logo">
+        <img src="../images/1-removebg-preview.png" alt="fonora.ai – KI-Telefonassistenz">
+        <span>fonora.ai</span>
+      </a>
+      <a href="https://cal.eu/headuphigh/fonora.ai-erstgeprach" target="_blank" rel="noopener" class="nav-cta magnetic-nav">Kennenlerncall buchen &rarr;</a>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <div class="container">
+      <p class="breadcrumb-inner">
+        <a href="../">fonora.ai</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Blog</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="blog-hero">
+    <div class="container">
+      <p class="blog-hero-label reveal">Blog</p>
+      <h1 class="blog-hero-headline reveal">Wissen. Impulse. Klartext.</h1>
+      <p class="blog-hero-sub reveal">Praxiswissen rund um KI-Telefonassistenz, Digitalisierung und Erreichbarkeit &mdash; f&uuml;r alle, die ihr Business ernst nehmen.</p>
+    </div>
+  </section>
+
+  <!-- BLOG GRID -->
+  <section class="blog-section">
+    <div class="container">
+      <div class="blog-grid">
+
+        <!-- Article 1 -->
+        <a href="./ki-telefonassistent-vs-callcenter-2026/" class="blog-card reveal">
+          <div class="blog-card-img">
+            <img src="../images/nora-buero.png" alt="KI Telefonassistent vs Callcenter Vergleich 2026">
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <span class="blog-card-category">Vergleich</span>
+              <span class="blog-card-date">10. April 2026</span>
+            </div>
+            <h2 class="blog-card-title">KI Telefonassistent vs. Callcenter &mdash; Was lohnt sich 2026?</h2>
+            <p class="blog-card-excerpt">Du &uuml;berlegst, ob ein KI-Telefonassistent oder ein klassisches Callcenter besser zu deinem Unternehmen passt? Wir vergleichen Kosten, Qualit&auml;t und Flexibilit&auml;t.</p>
+            <span class="blog-card-link">Weiterlesen &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Article 2 -->
+        <a href="./handwerker-verpasste-anrufe/" class="blog-card reveal">
+          <div class="blog-card-img">
+            <img src="../images/nora-handwerk-neu.png" alt="Handwerker verlieren Aufträge durch verpasste Anrufe">
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <span class="blog-card-category">Branche</span>
+              <span class="blog-card-date">17. April 2026</span>
+            </div>
+            <h2 class="blog-card-title">Warum Handwerker 30% mehr Auftr&auml;ge verlieren &mdash; ohne Telefonassistenz</h2>
+            <p class="blog-card-excerpt">Verpasste Anrufe kosten Handwerksbetriebe Tausende Euro im Jahr. So l&ouml;st du das Problem dauerhaft.</p>
+            <span class="blog-card-link">Weiterlesen &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Article 3 -->
+        <a href="./dsgvo-ki-telefon/" class="blog-card reveal">
+          <div class="blog-card-img">
+            <img src="../images/nora-stehend.png" alt="DSGVO konforme KI Telefonassistenz">
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <span class="blog-card-category">Datenschutz</span>
+              <span class="blog-card-date">24. April 2026</span>
+            </div>
+            <h2 class="blog-card-title">DSGVO-konforme KI am Telefon &mdash; Was du wissen musst</h2>
+            <p class="blog-card-excerpt">KI und Datenschutz &mdash; geht das zusammen? Ja. Wir erkl&auml;ren, worauf es bei DSGVO-konformer Telefonassistenz ankommt.</p>
+            <span class="blog-card-link">Weiterlesen &rarr;</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DIE FRAU HINTER FONORA -->
+  <div class="section-divider"><div class="container"><hr></div></div>
+  <section class="section section-dark about-wrap" id="about">
+    <div class="container">
+      <div class="about-inner reveal">
+        <div class="about-text">
+          <p class="about-label">
+            <span class="about-label-line"></span>
+            Die Frau hinter Fonora
+          </p>
+          <h2>KI mit Menschenverstand &mdash;<br>und Klartext.</h2>
+          <p>Ich bin <strong>Olga Reyes-Busch</strong>, Gr&uuml;nderin von Fonora.ai und der HeadUpHigh GmbH. Mein Hintergrund ist ungew&ouml;hnlich: Ich komme aus der Sonderp&auml;dagogik &mdash; und das merkt man.</p>
+          <p>Ich glaube nicht, dass Technologie allein Probleme l&ouml;st. Aber richtig eingesetzt, gibt sie deinem Team Raum f&uuml;r das, was wirklich z&auml;hlt. Fonora ist kein Hype &mdash; sondern ein System, das funktioniert.</p>
+          <div class="about-callout">
+            <p>&bdquo;Call Me &mdash; aber nur wenn du wirklich bereit bist, dein Telefon auf das n&auml;chste Level zu bringen.&ldquo;</p>
+          </div>
+          <p class="about-signature">Olga Reyes-Busch &middot; CEO &amp; Founder &middot; HeadUpHigh GmbH</p>
+        </div>
+        <div class="about-img-wrap">
+          <img src="../images/olga-about.png" alt="Olga Reyes-Busch, Gr&uuml;nderin Fonora.ai">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-logo">fonora.ai</p>
+      <p class="footer-company">fonora.ai ist ein Produkt der HeadUpHigh GmbH</p>
+      <div class="footer-links">
+        <a href="../datenschutz.html">Datenschutz</a>
+        <a href="../impressum.html">Impressum</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      /* CURSOR */
+      var cursor = document.getElementById('cursor');
+      var mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
+      document.addEventListener('mousemove', function (e) {
+        mouseX = e.clientX; mouseY = e.clientY;
+        if (!cursor.classList.contains('visible')) cursor.classList.add('visible');
+      });
+      document.addEventListener('mouseleave', function () { cursor.classList.remove('visible'); });
+      document.querySelectorAll('a, button, input, select').forEach(function (el) {
+        el.addEventListener('mouseenter', function () { cursor.classList.add('hover'); });
+        el.addEventListener('mouseleave', function () { cursor.classList.remove('hover'); });
+      });
+
+      /* LENIS */
+      var lenis = null;
+      if (window.Lenis) {
+        lenis = new window.Lenis({ duration: 1.2, easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); }, touchMultiplier: 2 });
+      }
+
+      /* GSAP + SCROLL ANIMATIONS */
+      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        if (lenis) {
+          lenis.on('scroll', ScrollTrigger.update);
+          gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
+          gsap.ticker.lagSmoothing(0);
+        }
+
+        /* NAV SCROLL */
+        ScrollTrigger.create({
+          start: 'top -80',
+          onUpdate: function (self) {
+            var nav = document.getElementById('nav');
+            if (self.direction === 1 && self.scroll() > 80) nav.classList.add('scrolled');
+            else if (self.scroll() <= 80) nav.classList.remove('scrolled');
+          }
+        });
+
+        /* REVEAL ANIMATIONS */
+        document.querySelectorAll('.reveal').forEach(function (el) {
+          gsap.to(el, {
+            scrollTrigger: { trigger: el, start: 'top 85%', once: true },
+            opacity: 1, y: 0, duration: 0.8, ease: 'power2.out'
+          });
+        });
+      } else {
+        /* Fallback: show everything */
+        document.querySelectorAll('.reveal').forEach(function (el) {
+          el.style.opacity = '1';
+          el.style.transform = 'none';
+        });
+      }
+
+      /* CURSOR RAF */
+      function animateCursor() {
+        cursorX += (mouseX - cursorX) * 0.15;
+        cursorY += (mouseY - cursorY) * 0.15;
+        cursor.style.left = cursorX + 'px';
+        cursor.style.top = cursorY + 'px';
+        requestAnimationFrame(animateCursor);
+      }
+      animateCursor();
+    });
+  </script>
+
+</body>
+</html>
