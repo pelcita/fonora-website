@@ -277,20 +277,22 @@
       left: 0;
       width: 100%;
       z-index: 1000;
-      padding: 20px 0;
-      transition: background 0.4s, backdrop-filter 0.4s, padding 0.4s;
+      padding: 0;
+      background: var(--ivory);
+      transition: background 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
     }
 
     .nav.scrolled {
-      background: rgba(9, 20, 64, 0.95);
+      background: var(--ivory);
       backdrop-filter: blur(12px);
-      padding: 12px 0;
+      box-shadow: 0 2px 20px rgba(9, 20, 64, 0.1);
     }
 
     .nav .container {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 12px 24px;
     }
 
     .nav-logo {
@@ -299,11 +301,8 @@
     }
 
     .nav-logo img {
-      height: 44px;
+      height: 48px;
       width: auto;
-      background: var(--ivory);
-      padding: 6px 14px;
-      border-radius: 10px;
     }
 
     .nav-links {
@@ -313,7 +312,7 @@
     }
 
     .nav-blog {
-      color: rgba(255,255,255,0.7);
+      color: var(--navy);
       font-family: var(--font-body);
       font-weight: 600;
       font-size: 0.9rem;
@@ -341,12 +340,14 @@
     }
 
     @media (max-width: 768px) {
-      .nav-logo img { height: 44px; padding: 6px 12px; }
+      .nav-logo img { height: 36px; }
+      .nav .container { padding: 10px 16px; }
       .nav-links { gap: 12px; }
       .nav-blog { font-size: 0.8rem; }
       .nav-cta { padding: 10px 18px; font-size: 0.75rem; }
     }
     @media (max-width: 400px) {
+      .nav-logo img { height: 32px; }
       .nav-cta { padding: 8px 14px; font-size: 0.7rem; }
     }
 
@@ -1225,6 +1226,8 @@
   </style>
 </head>
 <body>
+  <!-- PARTNER BANNER -->
+  <div style="background:var(--ivory);text-align:center;padding:6px 0;font-family:var(--font-body);font-size:0.7rem;color:rgba(9,20,64,0.5);letter-spacing:0.05em;">partnered with <a href="https://www.fonio.ai" target="_blank" rel="noopener" style="color:var(--orange);font-weight:600;text-decoration:none;">fonio</a></div>
 
   <!-- CUSTOM CURSOR (Phone Receiver) -->
   <div class="custom-cursor" id="cursor">
