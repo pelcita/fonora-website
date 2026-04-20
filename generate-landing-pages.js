@@ -4,21 +4,24 @@ const path = require('path');
 // Image mapping per branch
 const branchenBilder = {
   'fuer-dachdecker': 'nora-dachdecker.png',
-  'fuer-solaranlagen': 'nora-dachdecker.png',
-  'fuer-sanitaer': 'nora-handwerk.png',
-  'fuer-heizungsbau': 'nora-handwerk.png',
-  'fuer-elektrobetrieb': 'nora-handwerk.png',
-  'fuer-zahnarztpraxis': 'nora-gesundheit.png',
+  'fuer-solaranlagen': 'nora-solaranlagen.png',
+  'fuer-sanitaer': 'nora-sanitaer.png',
+  'fuer-heizungsbau': 'nora-heizung.png',
+  'fuer-elektrobetrieb': 'nora-elektro.png',
+  'fuer-zahnarztpraxis': 'nora-zahnarzt.png',
   'fuer-immobilienmakler': 'nora-immobilien.png',
-  'fuer-kfz-werkstatt': 'nora-auto.png',
-  'fuer-autohaus': 'nora-auto.png',
-  'fuer-malerbetrieb': 'nora-maler.png',
-  'fuer-tischlerei': 'nora-tischler.png',
-  'fuer-physiotherapie': 'nora-gesundheit.png',
+  'fuer-kfz-werkstatt': 'nora-kfz.png',
+  'fuer-autohaus': 'nora-autohaus.png',
+  'fuer-malerbetrieb': 'nora-malerbetrieb.png',
+  'fuer-tischlerei': 'nora-tischlerei.png',
+  'fuer-physiotherapie': 'nora-physiotherapie.png',
   'fuer-steuerberater': 'nora-steuerberater.png',
-  'fuer-kosmetikstudio': 'nora-beauty.png',
-  'fuer-friseursalon': 'nora-beauty.png',
+  'fuer-kosmetikstudio': 'nora-kosmetik.png',
+  'fuer-friseursalon': 'nora-friseur.png',
   'fuer-apotheke': 'nora-apotheke.png',
+  'fuer-tierarztpraxis': 'nora-tierarzt.png',
+  'fuer-architekt': 'nora-architekt.png',
+  'fuer-hundefriseur': 'nora-hundefriseur.png',
 };
 
 const pages = [
@@ -614,7 +617,118 @@ const pages = [
       { q: 'Kann Nora \u00fcber Notdienste informieren?', a: 'Ja. Nora kennt deinen Notdienstplan und gibt Anrufern Auskunft \u00fcber die n\u00e4chste diensthabende Apotheke.' },
       { q: 'Ist Nora DSGVO-konform f\u00fcr Gesundheitsdaten?', a: 'Ja. Alle Daten werden in Europa verarbeitet und gespeichert. Nora erf\u00fcllt alle DSGVO-Anforderungen \u2014 besonders wichtig im pharmazeutischen Bereich.' }
     ],
-    relatedBranchen: ['fuer-zahnarztpraxis', 'fuer-physiotherapie', 'fuer-kosmetikstudio']
+    relatedBranchen: ['fuer-zahnarztpraxis', 'fuer-physiotherapie', 'fuer-tierarztpraxis']
+  },
+  {
+    slug: 'fuer-tierarztpraxis',
+    branche: 'Tierarztpraxen',
+    brancheArtikel: 'Tierarztpraxen & Tierkliniken',
+    title: 'KI-Telefonassistenz f\u00fcr Tierarztpraxen',
+    metaDesc: 'Nora ist die KI-Telefonassistentin f\u00fcr Tierarztpraxen. Bucht Termine, priorisiert Notf\u00e4lle und beantwortet Fragen \u2013 24/7 erreichbar. DSGVO-konform. Made in Germany.',
+    keywords: 'KI Telefonassistent Tierarzt, Telefonassistenz Tierarztpraxis, Tierarzt Telefon KI, Tierklinik Anrufannahme, Tierarztpraxis digitalisieren, Tierarzt Terminbuchung',
+    heroLine1: 'Patient auf dem Tisch.',
+    heroLine2: 'Nora am Telefon.',
+    heroSmall: 'Deine Tierarztpraxis. 24/7.',
+    heroSub: 'KI-Telefonassistenz f\u00fcr deine Tierarztpraxis \u2014 bucht Termine, priorisiert Notf\u00e4lle und beantwortet Fragen besorgter Tierbesitzer, w\u00e4hrend du behandelst.',
+    stats: [
+      { number: '71', suffix: '%', text: 'der Tierbesitzer rufen bei Symptomen sofort an \u2014 auch abends und am Wochenende' },
+      { number: '5', suffix: 'h', text: 'verbringt eine Tierarztpraxis t\u00e4glich mit Telefonaten \u2014 statt mit Behandlung' },
+      { number: '24', suffix: '/7', text: 'erreichbar \u2014 auch nachts bei Vergiftungen und Unf\u00e4llen' }
+    ],
+    painPoints: [
+      { title: 'OP l\u00e4uft, Telefon klingelt', desc: 'Du bist mitten in einer Operation oder Behandlung \u2014 das Telefon klingelt ununterbrochen. Besorgte Tierbesitzer warten nicht.' },
+      { title: 'Notfall oder Routine?', desc: 'Ein Hund hat Schokolade gefressen vs. eine f\u00e4llige Impfung \u2014 beides klingt am Telefon dringend. Ohne Triage geht alles durcheinander.' },
+      { title: 'Emotional aufgeladene Anrufer', desc: 'Tierbesitzer in Panik brauchen Ruhe und klare Antworten. Wenn niemand rangeht, steigert sich die Angst \u2014 und sie fahren direkt zur n\u00e4chsten Klinik.' },
+      { title: 'Impftermine und Vorsorge koordinieren', desc: 'Hunderte Patienten mit j\u00e4hrlichen Impfungen, Wurmkuren, Check-ups \u2014 die Terminkoordination am Telefon ist ein Vollzeitjob.' }
+    ],
+    featureFraming: 'Nora erkennt Notf\u00e4lle (Vergiftung, Unfall, Atemnot) und eskaliert sofort. F\u00fcr Routinetermine (Impfung, Kastration, Check-up) bucht sie direkt in deinen Kalender \u2014 mit Tierart, Rasse und Anliegen.',
+    testimonial: {
+      text: 'Seit Nora unsere Anrufe sortiert, kommen echte Notf\u00e4lle sofort durch und Impftermine werden automatisch gebucht. Mein Praxisteam ist sp\u00fcrbar entlastet \u2014 und die Tierbesitzer f\u00fchlen sich trotzdem gut aufgehoben.',
+      name: 'Dr. Martin B.',
+      initials: 'MB',
+      role: 'Tierarzt, Kleintierpraxis \u00b7 14 Mitarbeiter'
+    },
+    faqs: [
+      { q: 'Kann Nora Tier-Notf\u00e4lle erkennen und priorisieren?', a: 'Ja. Nora erkennt Schl\u00fcsselw\u00f6rter wie Vergiftung, Atemnot, Unfall, Blutung und eskaliert sofort an dein Notfallteam \u2014 rund um die Uhr.' },
+      { q: 'Kann Nora nach Tierart und Rasse fragen?', a: 'Ja. Nora erfasst Tierart, Rasse, Alter, Gewicht und Symptome \u2014 so ist dein Team optimal vorbereitet.' },
+      { q: 'Kann Nora Impf- und Vorsorgetermine buchen?', a: 'Ja. Nora pr\u00fcft deinen Kalender und bucht Impfungen, Kastrationen, Zahnreinigungen und Check-ups direkt ein \u2014 mit allen relevanten Infos.' },
+      { q: 'Ist Nora DSGVO-konform f\u00fcr Patientendaten?', a: 'Ja. Alle Daten werden in Europa verarbeitet und gespeichert. Nora erf\u00fcllt alle DSGVO-Anforderungen.' }
+    ],
+    relatedBranchen: ['fuer-hundefriseur', 'fuer-zahnarztpraxis', 'fuer-apotheke']
+  },
+  {
+    slug: 'fuer-architekt',
+    branche: 'Architekten',
+    brancheArtikel: 'Architekturb\u00fcros & Planungsb\u00fcros',
+    title: 'KI-Telefonassistenz f\u00fcr Architekten',
+    metaDesc: 'Nora ist die KI-Telefonassistentin f\u00fcr Architekturb\u00fcros. Qualifiziert Bauherren-Anfragen, bucht Beratungstermine und ist 24/7 erreichbar \u2013 w\u00e4hrend du planst. DSGVO-konform.',
+    keywords: 'KI Telefonassistent Architekt, Telefonassistenz Architekturb\u00fcro, Architekt Telefon KI, Planungsb\u00fcro Anrufannahme, Architekturb\u00fcro digitalisieren',
+    heroLine1: 'Am Entwurf.',
+    heroLine2: 'Nora am Telefon.',
+    heroSmall: 'Dein Architekturb\u00fcro. 24/7.',
+    heroSub: 'KI-Telefonassistenz f\u00fcr dein Architekturb\u00fcro \u2014 qualifiziert Bauherren-Anfragen, bucht Beratungstermine und gibt Projektinfos weiter, w\u00e4hrend du planst.',
+    stats: [
+      { number: '58', suffix: '%', text: 'der Bauherren rufen zuerst an \u2014 wer nicht erreichbar ist, verliert den Auftrag an ein anderes B\u00fcro' },
+      { number: '4', suffix: 'h', text: 'verbringt ein Architekturb\u00fcro t\u00e4glich mit Telefonaten, R\u00fcckrufen und Terminkoordination' },
+      { number: '24', suffix: '/7', text: 'erreichbar \u2014 auch abends, wenn Bauherren \u00fcber ihr Projekt nachdenken' }
+    ],
+    painPoints: [
+      { title: 'Im Kundentermin \u2014 Telefon auf stumm', desc: 'Du sitzt mit einem Bauherrn am Tisch und besprichst Entw\u00fcrfe. Gleichzeitig ruft ein neuer Interessent an \u2014 und landet auf der Mailbox.' },
+      { title: 'Komplexe Erstanfragen am Telefon', desc: 'Neubau oder Sanierung? Grundst\u00fcck vorhanden? Budget? Baugenehmigung? Jedes Erstgespr\u00e4ch dauert 20 Minuten \u2014 ohne Ergebnis, wenn der Bauherr nicht qualifiziert ist.' },
+      { title: 'Auf der Baustelle nicht erreichbar', desc: 'Bei Bauleitungsterminen bist du stundenlang nicht am Telefon. Neue Anfragen gehen unter.' },
+      { title: 'Bestandskunden vs. Neuanfragen', desc: 'Laufende Projekte brauchen Updates, neue Interessenten brauchen Beratung \u2014 alles \u00fcber dasselbe Telefon.' }
+    ],
+    featureFraming: 'Nora qualifiziert Bauherren-Anfragen: Neubau oder Umbau, Grundst\u00fccksituation, Budget, Zeitrahmen. Sie bucht Erstberatungen und gibt Infos zu laufenden Projekten weiter \u2014 strukturiert und professionell.',
+    testimonial: {
+      text: 'Seit Nora unsere Anfragen vorqualifiziert, f\u00fchre ich nur noch Erstgespr\u00e4che mit Bauherren, die wirklich bauen wollen. Das spart mir locker 10 Stunden pro Woche.',
+      name: 'Dipl.-Ing. Markus K.',
+      initials: 'MK',
+      role: 'Inhaber, Architekturb\u00fcro \u00b7 8 Mitarbeiter'
+    },
+    faqs: [
+      { q: 'Kann Nora Bauherren-Anfragen qualifizieren?', a: 'Ja. Nora fragt nach Projekttyp (Neubau, Umbau, Sanierung), Grundst\u00fcck, Budget und Zeitrahmen \u2014 so bekommst du nur vorqualifizierte Anfragen.' },
+      { q: 'Kann Nora zwischen Bestandskunden und Neuanfragen unterscheiden?', a: 'Ja. Nora fragt, ob es um ein laufendes Projekt oder eine neue Anfrage geht, und leitet entsprechend weiter.' },
+      { q: 'Kann Nora Beratungstermine buchen?', a: 'Ja. Nora pr\u00fcft deinen Kalender und bucht Erstberatungen direkt ein \u2014 mit allen Projektinfos vorab.' },
+      { q: 'Versteht Nora Bau-Fachbegriffe?', a: 'Nora wird auf dein B\u00fcro trainiert und kennt Begriffe wie Baugenehmigung, Bebauungsplan, Leistungsphase, Entwurfsplanung und mehr.' }
+    ],
+    relatedBranchen: ['fuer-immobilienmakler', 'fuer-dachdecker', 'fuer-solaranlagen']
+  },
+  {
+    slug: 'fuer-hundefriseur',
+    branche: 'Hundefriseure',
+    brancheArtikel: 'Hundesalons & Tierpflege',
+    title: 'KI-Telefonassistenz f\u00fcr Hundefriseure & Hundesalons',
+    metaDesc: 'Nora ist die KI-Telefonassistentin f\u00fcr Hundefriseure und Hundesalons. Bucht Pflegetermine, beantwortet Fragen und ist 24/7 erreichbar \u2013 auch w\u00e4hrend du b\u00fcrstest. DSGVO-konform.',
+    keywords: 'KI Telefonassistent Hundefriseur, Telefonassistenz Hundesalon, Hundefriseur Telefon KI, Hundepflege Anrufannahme, Hundesalon digitalisieren, Grooming Terminbuchung',
+    heroLine1: 'Hund auf dem Tisch.',
+    heroLine2: 'N\u00e4chster Termin gebucht.',
+    heroSmall: 'Nora nimmt ab. 24/7.',
+    heroSub: 'KI-Telefonassistenz f\u00fcr deinen Hundesalon \u2014 bucht Pflegetermine, beantwortet Fragen zu Services und Preisen, w\u00e4hrend du b\u00fcrstest und scherst.',
+    stats: [
+      { number: '85', suffix: '%', text: 'der Hundesalon-Kunden buchen per Telefon \u2014 w\u00e4hrend du gerade einen Hund auf dem Tisch hast' },
+      { number: '6', suffix: '+', text: 'verpasste Anrufe pro Tag in einem Ein-Personen-Salon' },
+      { number: '24', suffix: '/7', text: 'erreichbar \u2014 Hundebesitzer buchen auch abends und am Wochenende' }
+    ],
+    painPoints: [
+      { title: 'Hund in der einen Hand, Telefon in der anderen', desc: 'Du badest, scherst oder f\u00f6hnst gerade einen Hund \u2014 und das Telefon klingelt. Rangehen ist unm\u00f6glich, auflegen tut weh.' },
+      { title: 'Solo-Selbstst\u00e4ndig = nie erreichbar', desc: 'Wenn du alleine arbeitest, ist w\u00e4hrend der gesamten Behandlung niemand am Telefon. Kunden buchen woanders.' },
+      { title: 'Rassen brauchen unterschiedliche Zeiten', desc: 'Ein Pudel braucht 2 Stunden, ein Labrador 45 Minuten. Ohne Rasse-Info wird der Kalender zum Chaos.' },
+      { title: 'Stammkunden wollen ihre Zeitslots', desc: 'Feste Kunden erwarten ihre Stammtermine. Neue Kunden rufen an und niemand geht ran \u2014 Wachstum gebremst.' }
+    ],
+    featureFraming: 'Nora fragt nach Hunderasse, Gr\u00f6\u00dfe, gew\u00fcnschtem Service (Waschen, Schneiden, Trimmen, Krallen, Komplett) und bucht den Termin mit der passenden Dauer. Dein Kalender bleibt sauber.',
+    testimonial: {
+      text: 'Setup war einfacher als gedacht. Das Team hat alles mit uns zusammen aufgebaut. Jetzt l\u00e4uft Nora rund um die Uhr und wir schlafen wieder ruhig.',
+      name: 'Anna P.',
+      initials: 'AP',
+      role: 'Betreiberin, Hundesalon \u00b7 Berlin'
+    },
+    faqs: [
+      { q: 'Kann Nora nach Hunderasse und Gr\u00f6\u00dfe fragen?', a: 'Ja. Nora erfasst Rasse, Gr\u00f6\u00dfe, Felltyp und gew\u00fcnschten Service \u2014 und bucht automatisch die richtige Zeitdauer im Kalender.' },
+      { q: 'Kann Nora verschiedene Pflegepakete anbieten?', a: 'Ja. Baden, Schneiden, Trimmen, Krallen, Komplett-Pflege \u2014 Nora kennt dein Angebot und bucht den passenden Service.' },
+      { q: 'Kann Nora Preise nennen?', a: 'Ja. Du hinterlegst deine Preise nach Gr\u00f6\u00dfe/Rasse und Nora gibt Kunden eine zuverl\u00e4ssige Erstauskunft.' },
+      { q: 'Lohnt sich Nora f\u00fcr einen Ein-Personen-Hundesalon?', a: 'Gerade dann! Du brauchst keine Empfangskraft und verpasst trotzdem keinen Anruf. Nora bucht Termine, w\u00e4hrend du arbeitest.' }
+    ],
+    relatedBranchen: ['fuer-tierarztpraxis', 'fuer-friseursalon', 'fuer-kosmetikstudio']
   }
 ];
 
@@ -1437,7 +1551,7 @@ const sitemapEntries = pages.map(p =>
 ).join('\n');
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemapg.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://fonora.ai/</loc>
     <changefreq>weekly</changefreq>
@@ -1454,6 +1568,21 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>0.3</priority>
   </url>
 ${sitemapEntries}
+  <url>
+    <loc>https://fonora.ai/blog/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fonora.ai/blog/ki-telefonassistent-vs-callcenter-2026/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fonora.ai/blog/handwerker-verlieren-auftraege-ohne-telefonassistenz/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>`;
 
 fs.writeFileSync(path.join(outputDir, 'sitemap.xml'), sitemap, 'utf8');

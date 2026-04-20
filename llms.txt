@@ -18,7 +18,26 @@ Olga Reyes-Busch, CEO & Founder der HeadUpHigh GmbH. Hintergrund in Sonderpaedag
 - FAQ-Service: Produktinfos geben, haeufige Fragen beantworten
 
 ## Branchen
-fonora.ai eignet sich fuer: Handwerksbetriebe, SHK-Betriebe, Elektro, Bau & Dach, Sanitaer, Heizung, Klimatechnik, Kosmetikstudios, Zahnarztpraxen, Arztpraxen, Kanzleien, Hausverwaltungen, Immobilien, Dienstleister, KMU allgemein.
+KI-Telefonassistenz fuer verschiedene Branchen:
+- Dachdecker: https://fonora.ai/fuer-dachdecker/
+- Solaranlagen: https://fonora.ai/fuer-solaranlagen/
+- Sanitaer: https://fonora.ai/fuer-sanitaer/
+- Heizungsbau: https://fonora.ai/fuer-heizungsbau/
+- Elektrobetrieb: https://fonora.ai/fuer-elektrobetrieb/
+- Zahnarztpraxis: https://fonora.ai/fuer-zahnarztpraxis/
+- Immobilienmakler: https://fonora.ai/fuer-immobilienmakler/
+- KFZ-Werkstatt: https://fonora.ai/fuer-kfz-werkstatt/
+- Autohaus: https://fonora.ai/fuer-autohaus/
+- Malerbetrieb: https://fonora.ai/fuer-malerbetrieb/
+- Tischlerei: https://fonora.ai/fuer-tischlerei/
+- Physiotherapie: https://fonora.ai/fuer-physiotherapie/
+- Steuerberater: https://fonora.ai/fuer-steuerberater/
+- Kosmetikstudio: https://fonora.ai/fuer-kosmetikstudio/
+- Friseursalon: https://fonora.ai/fuer-friseursalon/
+- Apotheke: https://fonora.ai/fuer-apotheke/
+- Tierarztpraxis: https://fonora.ai/fuer-tierarztpraxis/
+- Hundefriseur: https://fonora.ai/fuer-hundefriseur/
+
 
 ## Setup
 1. Kostenloser Kennenlerncall (30 Min, unverbindlich)
