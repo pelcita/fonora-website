@@ -134,24 +134,15 @@
       color: var(--navy);
       background: var(--navy);
       overflow-x: hidden;
-      cursor: none;
     }
 
     img { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
+    a, button { cursor: pointer; }
     ul { list-style: none; }
     h1, h2, h3, h4 { font-family: var(--font-headline); font-weight: 800; }
 
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-
-    /* CURSOR */
-    .custom-cursor {
-      position: fixed; top: 0; left: 0; pointer-events: none; z-index: 99999;
-      transform: translate(-50%, -50%); transition: transform 0.3s; opacity: 0; will-change: left, top;
-    }
-    .custom-cursor.visible { opacity: 1; }
-    .custom-cursor.hover { transform: translate(-50%, -50%) scale(1.4); }
-    .custom-cursor svg { width: 36px; height: 36px; filter: drop-shadow(0 2px 8px rgba(232, 93, 4, 0.5)); }
 
     /* NAV */
     .nav {
@@ -232,10 +223,9 @@
     /* CARD CONTAINER mit FLIP */
     .pricing-card {
       position: relative;
-      min-height: 620px;
+      min-height: 720px;
       transform-style: preserve-3d;
       transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-      cursor: none;
     }
     .pricing-card.flipped { transform: rotateY(180deg); }
 
@@ -367,7 +357,7 @@
       border-radius: 100px;
       text-align: center;
       transition: box-shadow 0.3s, transform 0.3s;
-      cursor: none;
+      cursor: pointer;
     }
     .plan-cta:hover { box-shadow: 0 12px 30px rgba(232,93,4,0.4); transform: translateY(-2px); }
 
@@ -379,20 +369,52 @@
     .plan-cta.secondary:hover { border-color: var(--orange); }
 
     .flip-btn {
-      position: absolute;
-      bottom: 20px;
-      right: 24px;
-      font-size: 0.75rem;
-      color: rgba(255,255,255,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      margin-top: 12px;
+      padding: 14px 20px;
+      background: rgba(255,255,255,0.06);
+      border: 2px dashed rgba(232,93,4,0.4);
+      border-radius: 100px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--orange);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .flip-btn:hover {
+      background: rgba(232,93,4,0.15);
+      border-color: var(--orange);
+      transform: translateY(-2px);
+    }
+    .flip-btn .flip-icon {
+      display: inline-block;
+      transition: transform 0.4s;
+      font-size: 1.1rem;
+    }
+    .flip-btn:hover .flip-icon { transform: rotateY(180deg); }
+    .flip-hint {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 6px 14px;
+      background: rgba(232,93,4,0.15);
+      border: 1px solid rgba(232,93,4,0.3);
+      border-radius: 100px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--orange);
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      cursor: none;
-      transition: color 0.3s;
-      background: none;
-      border: none;
-      font-family: var(--font-body);
+      animation: pulseHint 2s ease-in-out infinite;
     }
-    .flip-btn:hover { color: var(--orange); }
+    @keyframes pulseHint {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(232,93,4,0.4); }
+      50% { transform: scale(1.05); box-shadow: 0 0 0 8px rgba(232,93,4,0); }
+    }
 
     /* Card Rückseite */
     .card-back .plan-name { color: var(--orange); }
@@ -516,7 +538,7 @@
     .faq-question {
       width: 100%; display: flex; justify-content: space-between; align-items: center;
       padding: 24px 0; background: none; border: none; font-family: var(--font-headline);
-      font-weight: 700; font-size: 1.05rem; color: var(--navy); text-align: left; cursor: none; gap: 16px;
+      font-weight: 700; font-size: 1.05rem; color: var(--navy); text-align: left; cursor: pointer; gap: 16px;
     }
     .faq-icon { font-size: 1.5rem; font-weight: 400; color: var(--orange); transition: transform 0.4s; flex-shrink: 0; }
     .faq-item.open .faq-icon { transform: rotate(45deg); }
@@ -607,7 +629,7 @@
     /* RESPONSIVE */
     @media (max-width: 980px) {
       .pricing-grid { grid-template-columns: 1fr; gap: 32px; max-width: 480px; margin-left: auto; margin-right: auto; }
-      .pricing-card { min-height: 580px; }
+      .pricing-card { min-height: 760px; }
       .setup-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 768px) {
@@ -620,13 +642,6 @@
   </style>
 </head>
 <body>
-
-  <!-- CURSOR -->
-  <div class="custom-cursor" id="cursor">
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1.003 1.003 0 011.01-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.07 21 3 13.93 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.1.31.03.66-.25.94l-2.2 2.28z" fill="#e85d04"/>
-    </svg>
-  </div>
 
   <!-- NAV -->
   <nav class="nav" id="nav">
@@ -659,7 +674,7 @@
     <div class="container">
       <h1>Tarife für jede<br><span class="accent">Unternehmensgröße</span></h1>
       <p class="sub">Drei Pakete für unterschiedliche Anrufvolumen. Setup und monatliche Begleitung individuell zubuchbar. Monatlich kündbar, DSGVO-konform, Made in Germany.</p>
-      <p class="micro">Klick auf eine Karte für die komplette Feature-Liste.</p>
+      <span class="flip-hint">↻ Karten umdrehen für alle Details</span>
     </div>
   </section>
 
@@ -688,7 +703,7 @@
               <li class="muted">Keine Parallelanrufe</li>
             </ul>
             <a href="https://cal.eu/headuphigh/fonora.ai-erstgeprach" target="_blank" rel="noopener" class="plan-cta">Angebot anfordern</a>
-            <button class="flip-btn" onclick="flipCard('starter')">Details ansehen →</button>
+            <button class="flip-btn" onclick="flipCard('starter', event)"><span class="flip-icon">↻</span> Hier klicken für komplette Details</button>
           </div>
           <div class="card-face card-back">
             <p class="back-title">Starter — Alle Details</p>
@@ -705,7 +720,7 @@
               <li>DSGVO-konform, Server in Europa</li>
               <li>24/7 verfügbar</li>
             </ul>
-            <button class="flip-btn" onclick="flipCard('starter')">← Zurück</button>
+            <button class="flip-btn" onclick="flipCard('starter', event)"><span class="flip-icon">←</span> Zurück zur Übersicht</button>
           </div>
         </div>
 
@@ -730,7 +745,7 @@
               <li>Outbound-Anrufe möglich</li>
             </ul>
             <a href="https://cal.eu/headuphigh/fonora.ai-erstgeprach" target="_blank" rel="noopener" class="plan-cta">Angebot anfordern</a>
-            <button class="flip-btn" onclick="flipCard('business')">Details ansehen →</button>
+            <button class="flip-btn" onclick="flipCard('business', event)"><span class="flip-icon">↻</span> Hier klicken für komplette Details</button>
           </div>
           <div class="card-face card-back">
             <p class="back-title">Business — Alle Details</p>
@@ -747,7 +762,7 @@
               <li>Outbound-Anrufe</li>
               <li>Setup & Begleitung individuell</li>
             </ul>
-            <button class="flip-btn" onclick="flipCard('business')">← Zurück</button>
+            <button class="flip-btn" onclick="flipCard('business', event)"><span class="flip-icon">←</span> Zurück zur Übersicht</button>
           </div>
         </div>
 
@@ -766,7 +781,7 @@
               <li>Zero Data Retention möglich</li>
             </ul>
             <a href="https://cal.eu/headuphigh/fonora.ai-erstgeprach" target="_blank" rel="noopener" class="plan-cta">Angebot anfordern</a>
-            <button class="flip-btn" onclick="flipCard('enterprise')">Details ansehen →</button>
+            <button class="flip-btn" onclick="flipCard('enterprise', event)"><span class="flip-icon">↻</span> Hier klicken für komplette Details</button>
           </div>
           <div class="card-face card-back">
             <p class="back-title">Enterprise — Alle Details</p>
@@ -783,7 +798,7 @@
               <li>Individueller SLA</li>
               <li>Setup & Begleitung individuell</li>
             </ul>
-            <button class="flip-btn" onclick="flipCard('enterprise')">← Zurück</button>
+            <button class="flip-btn" onclick="flipCard('enterprise', event)"><span class="flip-icon">←</span> Zurück zur Übersicht</button>
           </div>
         </div>
 
@@ -927,37 +942,19 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // Cursor
-      var cursor = document.getElementById('cursor');
-      var mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
-      document.addEventListener('mousemove', function (e) {
-        mouseX = e.clientX; mouseY = e.clientY;
-        if (!cursor.classList.contains('visible')) cursor.classList.add('visible');
-      });
-      document.addEventListener('mouseleave', function () { cursor.classList.remove('visible'); });
-      document.querySelectorAll('a, button').forEach(function (el) {
-        el.addEventListener('mouseenter', function () { cursor.classList.add('hover'); });
-        el.addEventListener('mouseleave', function () { cursor.classList.remove('hover'); });
-      });
-
-      // Lenis
+      // Lenis Smooth Scroll
       var lenis = null;
       if (window.Lenis) {
         lenis = new window.Lenis({ duration: 1.2, easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); }, touchMultiplier: 2 });
-      }
-      function raf(time) {
-        cursorX += (mouseX - cursorX) * 0.15; cursorY += (mouseY - cursorY) * 0.15;
-        cursor.style.left = cursorX + 'px'; cursor.style.top = cursorY + 'px';
-        if (lenis) lenis.raf(time);
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
         requestAnimationFrame(raf);
       }
-      requestAnimationFrame(raf);
 
       // Nav scrolled
       var nav = document.getElementById('nav');
       window.addEventListener('scroll', function () { nav.classList.toggle('scrolled', window.scrollY > 80); }, { passive: true });
 
-      // FAQ
+      // FAQ Accordion
       document.querySelectorAll('.faq-question').forEach(function (btn) {
         btn.addEventListener('click', function () {
           var item = this.parentElement;
@@ -969,7 +966,8 @@
     });
 
     // Card Flip
-    function flipCard(name) {
+    function flipCard(name, ev) {
+      if (ev) { ev.preventDefault(); ev.stopPropagation(); }
       var card = document.querySelector('.pricing-card[data-card="' + name + '"]');
       if (card) card.classList.toggle('flipped');
     }
