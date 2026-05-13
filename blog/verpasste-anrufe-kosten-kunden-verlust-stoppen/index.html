@@ -1,0 +1,563 @@
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verpasste Anrufe kosten Kunden: KI Telefon verhindert Verluste | fonora.ai</title>
+  <meta name="description" content="Verpasste Anrufe kosten dich täglich Kunden. Erfahre, wie eine KI Telefonassistentin wie Nora jeden Anruf annimmt und deinen Umsatz schützt.">
+  <meta name="keywords" content="verpasste Anrufe, Kundenverlust, KI Telefon, KI Telefonassistentin, Anrufannahme, Nora">
+  <meta name="author" content="Olga Reyes-Busch">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://fonora.ai/blog/verpasste-anrufe-kosten-kunden-verlust-stoppen/">
+  <link rel="icon" type="image/png" href="../../images/icon.png">
+  <link rel="apple-touch-icon" href="../../images/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://fonora.ai/blog/verpasste-anrufe-kosten-kunden-verlust-stoppen/">
+  <meta property="og:title" content="Verpasste Anrufe kosten Kunden: KI Telefon verhindert Verluste | fonora.ai">
+  <meta property="og:description" content="Verpasste Anrufe kosten dich täglich Kunden. Erfahre, wie eine KI Telefonassistentin wie Nora jeden Anruf annimmt und deinen Umsatz schützt.">
+  <meta property="og:image" content="https://fonora.ai/images/nora-stehend.png">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="fonora.ai">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Verpasste Anrufe kosten Kunden: KI Telefon verhindert Verluste | fonora.ai">
+  <meta name="twitter:description" content="Verpasste Anrufe kosten dich täglich Kunden. Erfahre, wie eine KI Telefonassistentin wie Nora jeden Anruf annimmt und deinen Umsatz schützt.">
+  <meta name="twitter:image" content="https://fonora.ai/images/nora-stehend.png">
+
+  <!-- Geo -->
+  <meta name="geo.region" content="DE">
+  <meta name="geo.placename" content="Deutschland">
+
+  <!-- Schema.org Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Verpasste Anrufe kosten dich Kunden — So stoppst du den Verlust",
+    "description": "Verpasste Anrufe kosten dich täglich Kunden. Erfahre, wie eine KI Telefonassistentin wie Nora jeden Anruf annimmt und deinen Umsatz schützt.",
+    "author": {
+      "@type": "Person",
+      "name": "Olga Reyes-Busch"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "fonora.ai",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://fonora.ai/images/1-removebg-preview.png"
+      }
+    },
+    "datePublished": "2026-05-13",
+    "dateModified": "2026-05-13",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://fonora.ai/blog/verpasste-anrufe-kosten-kunden-verlust-stoppen/"
+    },
+    "image": "https://fonora.ai/images/nora-stehend.png"
+  }
+  </script>
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "fonora.ai", "item": "https://fonora.ai/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://fonora.ai/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Verpasste Anrufe kosten Kunden", "item": "https://fonora.ai/blog/verpasste-anrufe-kosten-kunden-verlust-stoppen/" }
+    ]
+  }
+  </script>
+
+  <!-- LLM-Optimierung -->
+  <meta name="summary" content="Verpasste Anrufe führen zu direktem Kundenverlust. Eine KI Telefonassistentin wie Nora nimmt jeden Anruf an und schützt vor Umsatzverlusten.">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy: #091440;
+      --orange: #e85d04;
+      --ivory: #f8f5ee;
+      --white: #ffffff;
+      --font-headline: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--navy);
+      background: var(--navy);
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, h4, h5, h6 { font-family: var(--font-headline); font-weight: 800; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* NAV */
+    .nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      padding: 20px 0; transition: background 0.4s, backdrop-filter 0.4s, padding 0.4s;
+      background: rgba(9, 20, 64, 0.95); backdrop-filter: blur(12px);
+    }
+    .nav.scrolled { padding: 12px 0; }
+    .nav .container { display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo {
+      display: flex; flex-direction: column; align-items: flex-start; gap: 2px;
+    }
+    .nav-logo img { height: 70px; width: auto; }
+    .powered-by { font-family: var(--font-body); font-size: 0.7rem; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; padding-left: 2px; }
+    .nav-cta {
+      display: inline-block; padding: 12px 28px; background: var(--orange); color: var(--white);
+      font-family: var(--font-body); font-weight: 600; font-size: 0.9rem;
+      border-radius: 100px; border: none; transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .nav-cta:hover { box-shadow: 0 8px 30px rgba(232, 93, 4, 0.4); }
+
+    /* BREADCRUMB */
+    .breadcrumb {
+      padding: 100px 0 0; background: var(--navy);
+    }
+    .breadcrumb-inner {
+      font-size: 0.8rem; color: rgba(255,255,255,0.4);
+      font-family: var(--font-body);
+    }
+    .breadcrumb-inner a { color: rgba(255,255,255,0.5); transition: color 0.3s; }
+    .breadcrumb-inner a:hover { color: var(--orange); }
+    .breadcrumb-sep { margin: 0 8px; }
+
+    /* ARTICLE HEADER */
+    .article-header {
+      padding: 40px 0 48px;
+      background: var(--navy);
+      text-align: left;
+    }
+    .article-header-inner {
+      max-width: 760px;
+    }
+    .article-meta {
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .article-category {
+      display: inline-block; padding: 6px 16px;
+      background: rgba(232, 93, 4, 0.15); color: var(--orange);
+      font-family: var(--font-body); font-weight: 600; font-size: 0.75rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      border-radius: 100px;
+    }
+    .article-date, .article-readtime {
+      font-size: 0.85rem; color: rgba(255,255,255,0.45);
+    }
+    .article-date::before {
+      content: ''; display: inline-block; width: 4px; height: 4px;
+      background: rgba(255,255,255,0.3); border-radius: 50%;
+      margin-right: 0; vertical-align: middle;
+    }
+    .article-header h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 0;
+    }
+
+    /* ARTICLE BODY */
+    .article-body {
+      background: var(--ivory);
+      padding: 80px 0 60px;
+    }
+    .article-content {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .article-content h2 {
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      line-height: 1.25;
+      color: var(--navy);
+      margin: 56px 0 20px;
+    }
+    .article-content h2:first-child {
+      margin-top: 0;
+    }
+    .article-content h3 {
+      font-size: 1.15rem;
+      color: var(--navy);
+      margin: 40px 0 12px;
+    }
+    .article-content p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(9, 20, 64, 0.78);
+      margin-bottom: 20px;
+    }
+    .article-content ul, .article-content ol {
+      margin: 0 0 24px 24px;
+      list-style: disc;
+    }
+    .article-content li {
+      font-size: 1.02rem;
+      line-height: 1.75;
+      color: rgba(9, 20, 64, 0.78);
+      margin-bottom: 8px;
+    }
+    .article-content a {
+      color: var(--orange);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.3s;
+    }
+    .article-content a:hover {
+      color: var(--navy);
+    }
+    .article-content strong {
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    /* TAKEAWAY BOX */
+    .takeaway {
+      background: var(--white);
+      border-left: 4px solid var(--orange);
+      border-radius: 0 12px 12px 0;
+      padding: 24px 28px;
+      margin: 32px 0;
+      box-shadow: 0 2px 12px rgba(9, 20, 64, 0.06);
+    }
+    .takeaway-label {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--orange);
+      margin-bottom: 8px;
+    }
+    .takeaway p {
+      margin-bottom: 0;
+      font-size: 1rem;
+      color: var(--navy);
+      font-weight: 500;
+    }
+
+    /* CTA BOX */
+    .article-cta {
+      background: var(--navy);
+      border-radius: 16px;
+      padding: 48px 40px;
+      text-align: center;
+      margin: 56px 0 0;
+    }
+    .article-cta h3 {
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      color: var(--white);
+      margin: 0 0 12px;
+    }
+    .article-cta p {
+      color: rgba(255,255,255,0.65);
+      font-size: 1.05rem;
+      margin-bottom: 28px;
+    }
+    .article-cta .cta-btn {
+      display: inline-block;
+      padding: 16px 40px;
+      background: var(--orange);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 1.05rem;
+      border-radius: 100px;
+      transition: box-shadow 0.3s, transform 0.3s;
+      text-decoration: none;
+    }
+    .article-cta .cta-btn:hover {
+      box-shadow: 0 12px 40px rgba(232, 93, 4, 0.5);
+      transform: translateY(-2px);
+      color: var(--white);
+    }
+
+    /* INTERNAL LINKS */
+    .internal-links {
+      margin: 48px 0 0;
+      padding: 32px 0 0;
+      border-top: 1px solid rgba(9, 20, 64, 0.1);
+    }
+    .internal-links h3 {
+      font-size: 1.1rem;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .internal-links-grid {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .internal-link {
+      display: inline-block;
+      padding: 10px 22px;
+      background: var(--white);
+      border: 1px solid rgba(9, 20, 64, 0.12);
+      border-radius: 100px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--navy);
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+    .internal-link:hover {
+      background: var(--orange);
+      color: var(--white);
+      border-color: var(--orange);
+    }
+
+    /* ABOUT SECTION */
+    .about-wrap { position: relative; overflow: hidden; }
+    .about-wrap::before { content: ''; position: absolute; top: -120px; right: -80px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(232,93,4,0.08), transparent 70%); pointer-events: none; }
+    .about-inner { display: flex; align-items: center; gap: 64px; }
+    .about-text { flex: 1 1 55%; }
+    .about-text .about-label { display: flex; align-items: center; gap: 12px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--orange); margin-bottom: 1rem; }
+    .about-text .about-label-line { display: block; width: 40px; height: 2px; background: var(--orange); }
+    .about-text h2 { font-family: var(--font-headline); font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800; line-height: 1.2; color: var(--white); margin-bottom: 1.2rem; }
+    .about-text p { font-size: 1.05rem; line-height: 1.8; color: rgba(255,255,255,0.75); margin-bottom: 1rem; }
+    .about-text p strong { color: var(--white); }
+    .about-callout { border-left: 3px solid var(--orange); padding: 1rem 1.5rem; margin: 1.5rem 0; background: rgba(232,93,4,0.06); border-radius: 0 12px 12px 0; }
+    .about-callout p { font-style: italic; color: rgba(255,255,255,0.85); margin: 0; }
+    .about-signature { font-family: var(--font-headline); font-weight: 700; font-size: 0.9rem; color: var(--orange); margin-top: 1.5rem; }
+    .about-img-wrap { flex: 0 0 320px; position: relative; }
+    .about-img-wrap::before { content: ''; position: absolute; top: -16px; left: -16px; right: -16px; bottom: -16px; border: 2px solid rgba(232,93,4,0.2); border-radius: 24px; pointer-events: none; }
+    .about-img-wrap img { width: 100%; border-radius: 20px; display: block; }
+    .section { padding: 120px 0; }
+    .section-dark { background: var(--navy); color: var(--white); }
+
+    /* FOOTER */
+    .footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,0.08); padding: 48px 0; text-align: center; }
+    .footer-logo { font-family: var(--font-headline); font-weight: 800; font-size: 1.2rem; color: var(--white); margin-bottom: 8px; }
+    .footer-company { font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-bottom: 24px; }
+    .footer-links { display: flex; justify-content: center; gap: 24px; }
+    .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.4); transition: color 0.3s; }
+    .footer-links a:hover { color: var(--white); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-logo img { height: 55px; }
+      .nav-cta { padding: 10px 18px; font-size: 0.75rem; }
+      .article-header h1 { font-size: 1.8rem; }
+      .article-body { padding: 48px 0 40px; }
+      .article-content h2 { margin-top: 40px; }
+      .article-cta { padding: 32px 24px; }
+      .about-inner { flex-direction: column; gap: 40px; text-align: center; }
+      .about-img-wrap { flex: none; max-width: 280px; }
+      .footer-links { flex-wrap: wrap; gap: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <nav class="nav" id="navbar">
+    <div class="container">
+      <div class="nav-logo">
+        <img src="../../images/1-removebg-preview.png" alt="fonora.ai Logo">
+        <div class="powered-by">powered by HeadUpHigh GmbH</div>
+      </div>
+      <a href="../../#demo" class="nav-cta">Nora kostenlos testen</a>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <section class="breadcrumb">
+    <div class="container">
+      <div class="breadcrumb-inner">
+        <a href="../../">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="../">Blog</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Verpasste Anrufe kosten Kunden</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE HEADER -->
+  <section class="article-header">
+    <div class="container">
+      <div class="article-header-inner">
+        <div class="article-meta">
+          <span class="article-category">Ratgeber</span>
+          <span class="article-date">13. Mai 2026</span>
+          <span class="article-readtime">4 Min. Lesezeit</span>
+        </div>
+        <h1>Verpasste Anrufe kosten dich Kunden — So stoppst du den Verlust</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE BODY -->
+  <section class="article-body">
+    <div class="container">
+      <div class="article-content">
+        <p>Du kennst das: Das Telefon klingelt, du bist gerade mit einem Kunden beschäftigt oder auf der Baustelle unterwegs – und schon ist ein potenzieller Kunde weg. Verpasste Anrufe sind der stille Killer deines Umsatzes. Während du denkst, es war nur ein kurzes Klingeln, entscheidet sich draußen jemand für deinen Konkurrenten.</p>
+
+        <p>Die Realität ist brutal: Kunden rufen heute selten zweimal an. Sie scrollen weiter, klicken auf den nächsten Eintrag oder greifen zum Telefon des Mitbewerbers. Jeder verpasste Anruf ist bares Geld, das dir durch die Lappen geht.</p>
+
+        <img src="../../images/nora-stehend.png" alt="Nora KI Telefonassistentin" style="max-width:400px; border-radius:16px; margin:2rem auto; display:block;">
+
+        <h2>Warum verpasste Anrufe so teuer sind</h2>
+
+        <p>Betriebe berichten immer wieder von denselben Problemen: Während der Geschäftszeiten sind sie beschäftigt, nach Feierabend klingelt das Telefon trotzdem. Kunden haben Notfälle, Fragen oder wollen schnell einen Termin vereinbaren – und landen nur auf der Mailbox.</p>
+
+        <p>Branchenexperten schätzen, dass kleine und mittlere Unternehmen durch verpasste Anrufe erhebliche Umsatzeinbußen erleiden. Besonders in Branchen wie dem <a href="../../fuer-handwerk/">Handwerk</a>, bei <a href="../../fuer-zahnarztpraxis/">Zahnarztpraxen</a> oder <a href="../../fuer-immobilienmakler/">Immobilienmaklern</a> entscheiden sich Kunden schnell für Alternativen.</p>
+
+        <div class="takeaway">
+          <div class="takeaway-label">Die harte Wahrheit</div>
+          <p>Jeder verpasste Anruf ist ein verpasster Umsatz. Kunden warten nicht – sie gehen zur Konkurrenz.</p>
+        </div>
+
+        <h3>Die typischen Verlustsituationen</h3>
+
+        <p>In <a href="../../fuer-dachdecker/">Dachdeckerbetrieben</a> rufen Kunden oft wegen Sturmschäden oder undichten Stellen an. Wenn niemand abnimmt, beauftragen sie den nächsten verfügbaren Betrieb. <a href="../../fuer-elektrobetrieb/">Elektrobetriebe</a> verpassen Notrufe, <a href="../../fuer-friseursalon/">Friseursalons</a> verlieren Terminanfragen und <a href="../../fuer-autohaus/">Autohäuser</a> verpassen heiße Kaufinteressenten.</p>
+
+        <p>Viele Unternehmen stellen fest, dass sie besonders außerhalb der Geschäftszeiten viele Anrufe verpassen. Kunden rufen abends oder am Wochenende an, weil sie dann Zeit haben – aber das Büro ist bereits geschlossen.</p>
+
+        <h2>Die Lösung: Eine KI Telefonassistentin namens Nora</h2>
+
+        <p>Hier kommt Nora ins Spiel – die KI-Telefonassistentin von fonora.ai, die niemals müde wird und niemals einen Anruf verpasst. Nora nimmt jeden Anruf professionell entgegen, beantwortet Grundfragen und leitet wichtige Informationen weiter.</p>
+
+        <h3>So funktioniert Nora in der Praxis</h3>
+
+        <ul>
+          <li><strong>24/7 Erreichbarkeit:</strong> Nora schläft nie und ist auch am Wochenende da</li>
+          <li><strong>Sofortige Anrufannahme:</strong> Kein Kunde landet mehr in der Warteschleife</li>
+          <li><strong>Intelligente Gesprächsführung:</strong> Nora versteht Kundenanliegen und reagiert passend</li>
+          <li><strong>Nahtlose Weiterleitung:</strong> Wichtige Anrufe werden sofort an dich weitergeleitet</li>
+          <li><strong>Automatische Protokollierung:</strong> Alle Gespräche werden dokumentiert und zusammengefasst</li>
+        </ul>
+
+        <p>Egal ob <a href="../../fuer-physiotherapie/">Physiotherapiepraxis</a>, <a href="../../fuer-malerbetrieb/">Malerbetrieb</a> oder <a href="../../fuer-apotheke/">Apotheke</a> – Nora passt sich an deine Branche an und spricht mit deinen Kunden, als wäre sie eine echte Mitarbeiterin.</p>
+
+        <h2>Konkrete Vorteile für dein Business</h2>
+
+        <p>Mit Nora verwandelst du jeden potenziell verpassten Anruf in eine Geschäftschance. Sie sammelt Kontaktdaten, vereinbart Termine und sorgt dafür, dass kein Kunde unverrichteter Dinge auflegt.</p>
+
+        <h3>Für Handwerksbetriebe</h3>
+        <p><a href="../../fuer-tischlerei/">Tischlereien</a>, <a href="../../fuer-heizungsbau/">Heizungsbaubetriebe</a> und <a href="../../fuer-sanitaer/">Sanitärbetriebe</a> profitieren besonders, da Kunden oft dringende Reparaturen benötigen. Nora kann Notfälle erkennen und dich sofort informieren.</p>
+
+        <h3>Für Dienstleister</h3>
+        <p><a href="../../fuer-steuerberater/">Steuerberater</a>, <a href="../../fuer-bauingenieur/">Bauingenieure</a> und <a href="../../fuer-architekt/">Architekten</a> verpassen keine wichtigen Projektanfragen mehr. Nora sammelt alle relevanten Informationen und erstellt eine Prioritätsliste.</p>
+
+        <img src="../../images/nora-buero.png" alt="Nora im Büro" style="max-width:400px; border-radius:16px; margin:2rem auto; display:block;">
+
+        <h2>Investment vs. verlorener Umsatz</h2>
+
+        <p>Nora ist ab 99 Euro/Monat* verfügbar – ein Bruchteil dessen, was dir ein einziger verpasster Großauftrag kostet. Während eine menschliche Teilzeitkraft für die Anrufannahme deutlich teurer wäre, arbeitet Nora rund um die Uhr ohne Pause.</p>
+
+        <p>Erfahrungswerte zeigen, dass Unternehmen mit einer professionellen Anrufannahme deutlich weniger Kunden verlieren. Besonders in wettbewerbsintensiven Branchen wie <a href="../../fuer-kfz-werkstatt/">KFZ-Werkstätten</a> oder <a href="../../fuer-kosmetikstudio/">Kosmetikstudios</a> macht das den Unterschied zwischen Wachstum und Stagnation.</p>
+
+        <div class="takeaway">
+          <div class="takeaway-label">Quick Win</div>
+          <p>Schon ab dem ersten Tag fängt Nora Anrufe ab, die du sonst verloren hättest. Die Investition amortisiert sich meist binnen Wochen.</p>
+        </div>
+
+        <h2>Moderne Kunden erwarten Erreichbarkeit</h2>
+
+        <p>Kunden von heute sind verwöhnt. Sie erwarten, dass Unternehmen erreichbar sind – sofort und professionell. Ein Anrufbeantworter wirkt altmodisch, eine Mailbox unpersönlich. Nora bietet echte Interaktion und vermittelt das Gefühl, dass sich jemand wirklich um das Anliegen kümmert.</p>
+
+        <p>Besonders <a href="../../fuer-solaranlagen/">Solaranlagenbetriebe</a> profitieren davon, da Kunden oft spezifische technische Fragen haben. Nora kann Grundinformationen liefern und qualifizierte Leads für das Verkaufsteam generieren.</p>
+
+        <h2>Der Wettbewerbsvorteil</h2>
+
+        <p>Während deine Konkurrenz noch Anrufe verpasst, baust du mit Nora einen entscheidenden Vorsprung auf. Kunden merken sofort den Unterschied zwischen einem Betrieb, der immer erreichbar ist, und einem, bei dem sie nur die Mailbox erreichen.</p>
+
+        <p>Viele Unternehmen berichten, dass sie durch die verbesserte Erreichbarkeit nicht nur bestehende Kunden zufriedener machen, sondern auch neue Kunden gewinnen, die von der professionellen Anrufannahme beeindruckt sind.</p>
+
+        <div class="internal-links">
+          <h3>Nora für deine Branche:</h3>
+          <div class="internal-links-grid">
+            <a href="../../fuer-dachdecker/" class="internal-link">Dachdecker</a>
+            <a href="../../fuer-zahnarztpraxis/" class="internal-link">Zahnarztpraxis</a>
+            <a href="../../fuer-architekt/" class="internal-link">Architekt</a>
+            <a href="../../fuer-apotheke/" class="internal-link">Apotheke</a>
+            <a href="../../fuer-friseursalon/" class="internal-link">Friseursalon</a>
+            <a href="../../fuer-physiotherapie/" class="internal-link">Physiotherapie</a>
+            <a href="../../fuer-autohaus/" class="internal-link">Autohaus</a>
+            <a href="../../fuer-malerbetrieb/" class="internal-link">Malerbetrieb</a>
+            <a href="../../fuer-elektrobetrieb/" class="internal-link">Elektrobetrieb</a>
+            <a href="../../fuer-tischlerei/" class="internal-link">Tischlerei</a>
+            <a href="../../fuer-kfz-werkstatt/" class="internal-link">KFZ-Werkstatt</a>
+            <a href="../../fuer-immobilienmakler/" class="internal-link">Immobilienmakler</a>
+          </div>
+        </div>
+
+        <p style="font-size:0.8rem;color:rgba(9,20,64,0.45);margin-top:2rem;">* Nora gibt es ab 99 Euro/Monat (Selfmade-Tarif). Je nach Anrufvolumen und Unternehmensgroesse auch hoehere Pakete bis 499 Euro/Monat und darueber. Ggf. zzgl. einmaligem Setup (ab 3.000 Euro) und optionaler Begleitung. Alle Angaben unverbindlich.</p>
+
+        <div class="article-cta">
+          <h3>Schluss mit verpassten Anrufen</h3>
+          <p>Teste Nora 14 Tage kostenlos und sieh selbst, wie sie jeden deiner Anrufe professionell beantwortet.</p>
+          <a href="../../#demo" class="cta-btn">Nora kostenlos testen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="about-wrap">
+        <div class="about-inner">
+          <div class="about-text">
+            <div class="about-label">
+              <span class="about-label-line"></span>
+              <span>Die Frau hinter Fonora</span>
+            </div>
+            <h2>Hallo, ich bin Olga</h2>
+            <p>Als Gründerin der <strong>HeadUpHigh GmbH</strong> und Entwicklerin von fonora.ai kenne ich die Herausforderungen kleiner und mittlerer Unternehmen aus erster Hand. Verpasste Anrufe waren für mich der Auslöser, eine Lösung zu entwickeln, die wirklich funktioniert.</p>
+            <div class="about-callout">
+              <p>„Jeder verpasste Anruf tut weh – als Unternehmerin weiß ich das. Deshalb haben wir Nora entwickelt: Damit nie wieder ein Kunde ungehört bleibt."</p>
+            </div>
+            <p>Mit fonora.ai helfen wir Unternehmen dabei, <strong>jeden Anruf zu einem Erfolg</strong> zu machen. Von der ersten Idee bis zur fertigen KI-Lösung stehe ich persönlich dahinter.</p>
+            <div class="about-signature">— Olga Reyes-Busch, Gründerin</div>
+          </div>
+          <div class="about-img-wrap">
+            <img src="../../images/olga-about.png" alt="Olga Reyes-Busch, Gründerin von fonora.ai">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">fonora.ai</div>
+      <div class="footer-company">Ein Produkt der HeadUpHigh GmbH</div>
+      <div class="footer-links">
+        <a href="../../impressum/">Impressum</a>
+        <a href="../../datenschutz/">Datenschutz</a>
+        <a href="../../agb/">AGB</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
+```
