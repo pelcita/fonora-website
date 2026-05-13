@@ -1609,6 +1609,11 @@ ${sitemapEntries}
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://fonora.ai/blog/verpasste-anrufe-kosten-kunden-verlust-stoppen/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>`;
 
 fs.writeFileSync(path.join(outputDir, 'sitemap.xml'), sitemap, 'utf8');
