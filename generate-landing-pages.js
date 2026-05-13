@@ -1134,7 +1134,11 @@ ${faqSchemaItems}
         <img src="../images/1-removebg-preview.png" alt="fonora.ai \u2013 KI-Telefonassistenz f\u00fcr ${page.branche}">
         <span>fonora.ai</span>
       </a>
-      <a href="https://cal.eu/headuphigh/fonora.ai-erstgeprach" target="_blank" rel="noopener" class="nav-cta magnetic-nav">Kennenlerncall buchen &rarr;</a>
+      <div class="nav-links" style="display:flex;align-items:center;gap:24px;">
+        <a href="../tarife/" style="font-family:var(--font-body);font-weight:500;font-size:0.9rem;color:rgba(255,255,255,0.75);transition:color 0.3s;">Tarife</a>
+        <a href="../blog/" style="font-family:var(--font-body);font-weight:500;font-size:0.9rem;color:rgba(255,255,255,0.75);transition:color 0.3s;">Blog</a>
+        <a href="https://cal.eu/headuphigh/fonora.ai-erstgeprach" target="_blank" rel="noopener" class="nav-cta magnetic-nav">Kennenlerncall buchen &rarr;</a>
+      </div>
     </div>
   </nav>
 
@@ -1345,8 +1349,10 @@ ${faqHtml}
   <footer class="footer">
     <div class="container">
       <p class="footer-logo">fonora.ai</p>
-      <p class="footer-company">fonora.ai ist ein Produkt der HeadUpHigh GmbH</p>
+      <p class="footer-company">fonora.ai ist ein Produkt der HeadUpHigh GmbH · Unna, Deutschland</p>
       <div class="footer-links">
+        <a href="../tarife/">Tarife</a>
+        <a href="../blog/">Blog</a>
         <a href="../datenschutz.html">Datenschutz</a>
         <a href="../impressum.html">Impressum</a>
       </div>
@@ -1569,6 +1575,11 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
   </url>
 ${sitemapEntries}
   <url>
+    <loc>https://fonora.ai/tarife/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://fonora.ai/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -1580,6 +1591,21 @@ ${sitemapEntries}
   </url>
   <url>
     <loc>https://fonora.ai/blog/handwerker-verlieren-auftraege-ohne-telefonassistenz/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fonora.ai/blog/dsgvo-konforme-ki-telefon-datenschutz/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fonora.ai/blog/5-zeichen-unternehmen-braucht-ki-telefonassistenz/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fonora.ai/blog/ki-telefon-zahnarztpraxis-praxisalltag/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
